@@ -1,0 +1,49 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:~/fecampay?MODE=MySQL;
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+
+  data:
+    redis:
+      host: localhost
+      port: 6379
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        show_sql: false
+        format_sql: true
+        highlight_sql: true
+        storage_engine: innodb
+        default_batch_fetch_size: 100
+    defer-datasource-initialization: true
+
+  output:
+    ansi:
+      enabled: always
+
+  h2:
+    console:
+      enabled: true
+
+  sql:
+    init:
+      mode: EMBEDDED
+
+logging:
+  level:
+    org:
+      hibernate:
+        type: trace
+        SQL: debug
+        orm:
+          jdbc:
+            bind: trace
+      springframework:
+        orm:
+          jpa: debug
+        transaction: debug
