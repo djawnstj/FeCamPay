@@ -20,6 +20,9 @@ class StorePaymentRequestQueryRepository(
                 .and(
                     path(Store::deletedAt).isNull()
                 )
+                .and(
+                    path(StorePaymentRequest::store)(Store::id).equal(storeId)
+                )
         )
     }.firstOrNull()
 

@@ -5,12 +5,10 @@ import com.djawnstj.fecampay.common.exception.FeCamPayException
 import com.djawnstj.fecampay.store.dto.StorePaymentRequestDto
 import com.djawnstj.fecampay.store.entity.StorePaymentRequest
 import com.djawnstj.fecampay.store.repository.StorePaymentRequestQueryRepository
-import com.djawnstj.fecampay.store.repository.StoreRepository
 import org.springframework.stereotype.Service
 
 @Service
 class StoreService(
-    private val storeRepository: StoreRepository,
     private val storePaymentRequestQueryRepository: StorePaymentRequestQueryRepository
 ) {
 
